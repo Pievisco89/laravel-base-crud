@@ -15,6 +15,5 @@ use phpDocumentor\Reflection\Types\Resource_;
 */
 
 Route::get('/', 'PageController@index')->name('home');
-//Route::get('/comics', 'PageController@comics')->name('comics');
 
 Route::resource('comics', 'ComicController');
