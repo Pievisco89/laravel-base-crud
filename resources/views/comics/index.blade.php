@@ -21,6 +21,9 @@
             <td>{{ $comic->title }}</td>
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->type }}</td>
+            <td>
+              <a href=" {{ route('comics.show', $comic->id) }} " class="btn btn-success">SHOW</a>
+            </td>
           </tr>
           
         @endforeach
