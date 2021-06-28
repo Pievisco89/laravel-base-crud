@@ -17,6 +17,9 @@
         <li class="nav-item">
           <a class="nav-link @if ( Request::route()->getName() === 'comics.index') active @endif" href="{{ route('comics.index') }}">Comics</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link @if ( Request::route()->getName() === 'comics.create') active @endif" href="{{ route('comics.create') }}">New Comics</a>
+        </li>
       </ul>
           
     </div>
