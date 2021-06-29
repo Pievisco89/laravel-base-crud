@@ -37,7 +37,13 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $new_comic = new Comic();
+        //invece di scrivere tutto a mano utilizzo fill()
+        $new_comic->fill($data); //prende tutti i dati inseriti e li butta dentro data
+        $new_comic->save();
+
+        return redirect()->route('comics.show', $new_comic); //return alla rotta show poter vedere quello che gli passo
     }
 
     /**
@@ -52,6 +58,7 @@ class ComicController extends Controller
         if($comic){
             return view('comics.show', compact('comic'));
         }
+        abort(404, 'Errore! Hai inserito dati sbagliati!');
     }
 
     /**

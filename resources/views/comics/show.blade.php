@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title">{{ $comic->title }}</h5>
+            <h4 class="card-title">{{ $comic->title }}</h4>
             <p class="card-text">Description: {{ $comic->description }}</p>
             <p class="card-text">Type: {{ $comic->type }}</p>
             <p class="card-text">Price: {{ $comic->price }}$</p>
