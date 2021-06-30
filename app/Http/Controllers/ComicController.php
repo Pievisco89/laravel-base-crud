@@ -58,7 +58,7 @@ class ComicController extends Controller
         if($comic){
             return view('comics.show', compact('comic'));
         }
-        abort(404, 'Errore! Hai inserito dati sbagliati!');
+        abort(404, 'Errore! Fumetto non trovato!');
     }
 
     /**
@@ -98,8 +98,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('comics.index')->with('deleted', $comic->title);
     }
 }
