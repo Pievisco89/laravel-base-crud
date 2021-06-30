@@ -16,7 +16,7 @@ class ComicController extends Controller
     {
         $comics = Comic::paginate(6);
         
-        return view('comics.index', ['comics' => $comics]);
+        return view('comics.index', ['comics' => $comics]); //posso mettere anche compact('comics')
     }
 
     /**
@@ -69,7 +69,11 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::find($id);
+        if($comic){
+            return view('comics.edit',compact('comic'));
+        }
+        abort(404, 'Errore! Hai inserito dati sbagliati!');
     }
 
     /**
@@ -81,7 +85,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $comic = Comic::find($id);
+        $comic->update($data);
+        return redirect()->route('comics.show', $comic);
+        
     }
 
     /**

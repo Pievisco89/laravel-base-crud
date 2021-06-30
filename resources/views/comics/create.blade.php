@@ -27,7 +27,7 @@
       </div>
 
       <div class="mt-5 mb-3">
-
+        
         <label for="type" class="form_label mb-2">Type:</label>
         <input type="text" id="type" name="type">
         

@@ -14,4 +14,6 @@ use phpDocumentor\Reflection\Types\Resource_;
 |
 */
 
+Route::get('/', 'ComicController@index');
+
 Route::resource('comics', 'ComicController');

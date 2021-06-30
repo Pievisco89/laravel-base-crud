@@ -11,6 +11,7 @@
           <th scope="col">Title</th>
           <th scope="col">Series</th>
           <th scope="col">Type</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -22,7 +23,9 @@
             <td>{{ $comic->series }}</td>
             <td>{{ $comic->type }}</td>
             <td>
-              <a href=" {{ route('comics.show', $comic->id) }} " class="btn btn-success">SHOW</a>
+              <a href=" {{ route('comics.show', $comic->id) }} " class="btn btn-success me-3">SHOW</a>
+              <a href=" {{ route('comics.edit', $comic) }} " class="btn btn-primary me-3">EDIT</a>
+              <a href=" {{ route('comics.show', $comic->id) }} " class="btn btn-danger">DELETE</a>
             </td>
           </tr>
           

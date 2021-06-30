@@ -6,7 +6,10 @@
     
     <section class="title text-center m-5">
       
-      <h1> {{ $comic->title }} </h1>
+      <h1> 
+        {{ $comic->title }} 
+        <a href=" {{ route('comics.edit', $comic) }} " class="btn btn-primary ms-3">EDIT</a>
+      </h1>
 
     </section>
 
