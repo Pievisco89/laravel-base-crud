@@ -44,7 +44,10 @@
 
       </div>
 
-      <button type="submit" class="btn btn-primary">Enter</button>
+      <div class="d-flex justify-content-between">
+        <a href=" {{ route('comics.index') }} "><< Back</a>
+        <button type="submit" class="btn btn-primary">Enter</button>
+      </div>
   
     </form>
     
